@@ -1,0 +1,8 @@
+mat-list{
+    margin: auto;
+}
+
+mat-list >  *{
+    display: inline-block;
+   
+}

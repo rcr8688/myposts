@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'postdata';
+
+  posts = []
+  addpost(post) {
+    this.posts.push(post)
+  }
 }

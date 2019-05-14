@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-
+import { Posts } from '../posts.model'
+import { NgForm } from '@angular/forms';
+import {PostsService} from '../posts.service'
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -7,18 +9,23 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
-title:any
-content:any
- @Output() postcontent=new EventEmitter()
+  constructor(private postserv:PostsService ) { }
+
+  title: any
+  content: any
+  // @Output() postcontent = new EventEmitter<Posts>()
   ngOnInit() {
   }
-  onsavedata(){
-var post={
-title:this.title,
-content:this.content
-}
-this.postcontent.emit(post)
+  onsavedata(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.postserv.addposts(form.value.title,form.value.content)
+    // var post: Posts = {
+    //   title: form.value.title,
+    //   content: form.value.content
+    // }
+    // this.postcontent.emit(post)
   }
 
 }

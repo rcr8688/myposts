@@ -18,13 +18,15 @@ export class PostlistComponent implements OnInit {
   // ]
 
 
-  posts:Posts[]
+  posts:Posts[]=[]
 
 
   constructor(private postservice:PostsService ) { }
 
   ngOnInit() {
-  this.posts=  this.postservice.getposts()
+   this.postservice.pasdatobsl().subscribe((dat:Posts[])=>{
+  this.posts=dat  
+  })
   }
   
 

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,7 +20,7 @@ import { PostlistComponent } from './postlist/postlist.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,CustmtrlModule,FormsModule,
+    AppRoutingModule,CustmtrlModule,FormsModule,HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [],

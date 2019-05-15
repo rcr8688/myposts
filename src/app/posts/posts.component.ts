@@ -21,6 +21,7 @@ export class PostsComponent implements OnInit {
       return;
     }
     this.postserv.addposts(form.value.title,form.value.content)
+    form.resetForm()
     // var post: Posts = {
     //   title: form.value.title,
     //   content: form.value.content
